@@ -1,0 +1,32 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  justify-content: center;
+}
+
+.uploaded-file {
+  width: calc(100%);
+  min-width: 200px;
+  padding: 5px 0;
+  text-align: center;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2px 1px -2px rgb(0 0 0 / 20%), 0 1px 2px 0 rgb(0 0 0 / 14%),
+    0 0 5px 0 rgb(0 0 0 / 12%);
+  position: relative;
+}
+
+.progress-bar {
+  width: 0;
+  transition: width linear;
+  height: 100%;
+  background-color: rgba(140, 140, 140, 0.3);
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 0 0 5px 5px;
+}
+
+button {
+  width: 100%;
+}

@@ -1,0 +1,12 @@
+<div class="stepper">
+  <div *ngFor="let step of steps; let index = index" class="step">
+    <div
+      (click)="chooseStep(index)"
+      [class.button-no-hover]="step.chosen"
+      [class.chosen]="step.chosen"
+      class="circle"
+    >
+      <div class="title">{{ step.title }}</div>
+    </div>
+  </div>
+</div>

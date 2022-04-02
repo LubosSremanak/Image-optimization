@@ -1,0 +1,19 @@
+<div class="form">
+  <input
+    #file
+    (change)="onSubmit($event)"
+    class="form-control"
+    hidden
+    id="fileUpload"
+    multiple
+    name="files"
+    type="file"
+  />
+  <button (click)="file.click()" class="button-dark submit-button">
+    Upload {{ type }}
+  </button>
+  <div class="uploaded-file">
+    <div class="progress-bar" [ngStyle]="getProgress()"></div>
+    {{ loadingStatus }}
+  </div>
+</div>

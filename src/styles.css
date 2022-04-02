@@ -1,1 +1,245 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, serif;
+  background-color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+:root {
+  --primary-color: #080808;
+  --secondary-color: #080808;
+  --text-color: #505050;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  user-select: none;
+}
+
+a:hover {
+  color: var(--primary-color) !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  -webkit-appearance: none;
+}
+
+input,
+textarea,
+select {
+  font-family: "acumin-pro", serif;
+  background-color: #ffffff;
+  border-color: #dddddd;
+  color: #333333;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: 30px;
+  margin-top: 6px;
+  padding-left: 10px;
+  width: calc(100% - 15px);
+  text-align: left;
+  text-transform: none;
+  height: 42px;
+  line-height: 42px;
+  border-style: solid;
+  border-width: 1px;
+  outline: none;
+  border-radius: 3px;
+  resize: vertical;
+}
+
+textarea {
+  height: 130px;
+  margin-bottom: 25px;
+}
+
+label {
+  color: #333333;
+  font-weight: bold;
+  font-size: 15px;
+  font-style: normal;
+  line-height: 15px;
+  text-align: left;
+  text-transform: none;
+}
+
+:is(input, textarea, select)::placeholder {
+  color: #aeadad !important;
+  font-size: 13px !important;
+  font-weight: 200 !important;
+  letter-spacing: 1px !important;
+}
+
+@media only screen and (max-width: 900px) {
+  .header-space {
+    margin-top: 95px;
+  }
+  .header-space-admin-status-on {
+    margin-top: 150px;
+  }
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+  width: 11px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 11px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid white;
+  background-color: #dddddd;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.validity-error {
+  color: #cc0000;
+  margin-top: -30px;
+  height: 18px;
+  font-size: 13px;
+}
+
+.important-field {
+  color: #cc0000;
+}
+
+.input-field-error {
+  border-color: #cc0000;
+}
+
+.submit-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin:10px 0;
+}
+
+.submit-button {
+  border-radius: 5px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-transform: none;
+  border: 1px solid #dddddd;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fab {
+  border-radius: 50%;
+  padding: 5px;
+  user-select: none;
+}
+
+.button {
+  user-select: none;
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: background-color, color 250ms linear;
+  background-color: white;
+}
+
+.button:hover {
+  background: var(--primary-color) !important;
+  color: white !important;
+  transition: background-color, color 250ms linear;
+}
+
+.button-dark {
+  user-select: none;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  transition: background-color, color 250ms linear;
+  border-color: transparent;
+}
+
+.button-dark:hover {
+  background: white !important;
+  border-color: #dddddd;
+  color: var(--primary-color) !important;
+  transition: background-color, color 250ms linear;
+}
+
+.button-dark-no-hover:hover {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+.button-no-hover:hover {
+  background: white !important;
+  color: var(--primary-color) !important;
+}
+
+.danger-snackbar {
+  background: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(3px);
+  color: #eb5554;
+  font-weight: bold;
+}
+
+.success-snackbar {
+  background: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(3px);
+  color: var(--primary-color);
+}
+
+.neutral-snackbar {
+  background: transparent;
+  color: black;
+}
+
+.warning-snackbar {
+  background: #f5d358;
+  color: black;
+}
+
+.spacer {
+  flex: 1 0;
+}
+
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

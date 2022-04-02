@@ -1,0 +1,64 @@
+<div class="image-manager flex-column">
+  <app-image-uploader
+    (files)="uploadFiles($event)"
+    [loadedFiles]="loadedFiles"
+  ></app-image-uploader>
+  <app-mini-stepper (chosenStepId)="chooseSize($event)"></app-mini-stepper>
+  <div #container [ngStyle]="marginLeftToCenter">
+    <div class="slideshow-manager" cdkDropListGroup>
+      <div
+        class="drag-wrapper"
+        *ngFor="let image of images; let index = index;trackBy:identify"
+        cdkDropList
+        cdkDropListOrientation="horizontal"
+        [cdkDropListData]="{ item:image,index: index }"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div
+          #imageContainer
+          [class.image-large]="this.imageSize === 'large'"
+          [class.image-medium]="this.imageSize === 'medium'"
+          [class.image-small]="this.imageSize === 'small'"
+          cdkDrag
+          (cdkDragStarted)="dragStart(index)"
+          (cdkDragReleased)="dragEnd()"
+          cdkDragBoundary=".slideshow-manager"
+          class="image-wrapper"
+        >
+          <div *cdkDragPlaceholder
+          ></div>
+          <div
+            [class.image-large]="this.imageSize === 'large'"
+            [class.image-medium]="this.imageSize === 'medium'"
+            [class.image-small]="this.imageSize === 'small'"
+            class="overlay"></div>
+          <img
+            [class.image-large]="this.imageSize === 'large'"
+            [class.image-medium]="this.imageSize === 'medium'"
+            [class.image-small]="this.imageSize === 'small'"
+            [src]="getImage(index)"
+            alt="image"
+            class="image"
+          />
+          <mat-icon (click)="removeImage($event, index)" class="delete button fab"
+          >delete
+          </mat-icon>
+          <div class="order">
+          <span [@in]="!change" [@out]="change" class="text">{{
+            image.order
+            }}</span>
+          </div>
+        </div>
+        <div class="source" *ngIf="index===draggedIndex"
+             [class.image-large]="this.imageSize === 'large'"
+             [class.image-medium]="this.imageSize === 'medium'"
+             [class.image-small]="this.imageSize === 'small'"
+        ></div>
+      </div>
+    </div>
+  </div>
+  <button class="button button-dark submit-button" (click)="compressImages()">Compress</button>
+<!--  <div class="compressed-images" >-->
+<!--    <img *ngFor="let compressed of compressedImages" alt="compressed image" [src]="compressed">-->
+<!--  </div>-->
+</div>
